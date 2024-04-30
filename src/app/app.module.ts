@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardContainerComponent } from './components/card-container/card-container.component';
+import { MainPageComponent } from './pages/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     CardContainerComponent,
+    MainPageComponent,
     HeaderComponent
   ],
   imports: [
