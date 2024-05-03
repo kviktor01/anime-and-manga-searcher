@@ -7,6 +7,7 @@ import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardContainerComponent } from './components/card-container/card-container.component';
 import { MainPageComponent } from './pages/main-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MainPageComponent } from './pages/main-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

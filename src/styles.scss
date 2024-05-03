@@ -5,7 +5,7 @@
 }
 
 body {
- background-color: rgb(239 226 217)
+ background-color: rgba(239,226,217,0.7)
 }
 .card-container{
   display: grid;
@@ -36,7 +36,7 @@ body {
   height: 100%;
   backface-visibility: hidden;
   transform: rotateY(180deg);
-  background-color: rgb(230 205 185);
+  background-color: rgba(230,205,185,0.5);
   color: rgb(130 109 94);
   border-radius: 15px;
   padding: 1rem;
@@ -55,4 +55,9 @@ body {
 
 .card-data{
   margin-top: 1rem;
+}
+
+.card-data span{
+  display: block;
+  margin-top: 0.5rem;
 }
