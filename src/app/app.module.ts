@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CardContainerComponent } from './components/card-container/card-container.component';
 import { MainPageComponent } from './pages/main-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GenreChipComponent } from './components/genre-chip/genre-chip.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     CardComponent,
     CardContainerComponent,
     MainPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    GenreChipComponent
   ],
   imports: [
     BrowserModule,

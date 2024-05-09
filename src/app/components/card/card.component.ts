@@ -14,7 +14,16 @@ import { Card } from 'src/app/models/card.models';
           <span>Author: {{ cardData?.author }}</span>
           <span>Releasing: {{cardData?.releaseStart}} - {{cardData?.releaseEnd}}</span>
           <span>Score: {{cardData?.score}}</span>
+          <div class="genres-container">
+            <genre-chip
+                *ngFor="let genre of cardData?.genres"
+                [genre]="genre">
+            </genre-chip>
+          </div>
         </div>
+        <button>
+          Továbbiak
+        </button>
       </div>
     </div>
   `,
@@ -23,5 +32,7 @@ export class CardComponent {
   @Input()
   public cardData: Card | undefined;
 
-  constructor() {}
+  constructor() {
+
+  }
 }

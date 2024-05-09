@@ -61,3 +61,33 @@ body {
   display: block;
   margin-top: 0.5rem;
 }
+
+.genres-container{
+  margin-top: 0.8rem;
+}
+
+span.genre-chip{
+  background-color: rgb(237, 188, 149);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  display: inline-block;
+}
+
+.card button{
+  background-color: rgb(238, 198, 166);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  color: rgb(130 109 94);
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.card button:hover{
+  cursor: pointer;
+  background-color: rgb(237, 188, 149);
+}

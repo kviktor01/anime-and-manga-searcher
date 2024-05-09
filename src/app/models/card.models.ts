@@ -7,4 +7,5 @@ export interface Card{
   score: number;
   releaseStart: string;
   releaseEnd?: string;
+  genres: string[];
 }

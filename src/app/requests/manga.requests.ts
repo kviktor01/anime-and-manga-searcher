@@ -21,8 +21,9 @@ export class MangaRequestsService {
             author: item.authors[0].name,
             synopsis: item.synopsis,
             score: item.score,
-            releaseStart: item.published.from.split('T')[0],
-            releaseEnd: item.published.to?.split('T')[0]
+            releaseStart: item.published.from.split('T')[0].replaceAll('-', '.'),
+            releaseEnd: item.published.to?.split('T')[0].replaceAll('-', '.'),
+            genres: item.genres.map((genre: any) => genre.name)
           } as Card)
       );
     }
