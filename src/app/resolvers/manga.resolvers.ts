@@ -1,7 +1,7 @@
-import { inject } from "@angular/core";
-import { ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot } from "@angular/router";
-import { MangaRequestsService } from "../requests/manga.requests";
-import { Card } from "../models/card.models";
+import {inject} from '@angular/core';
+import {ResolveFn} from '@angular/router';
+import {MangaRequestsService} from '../requests/manga.requests';
+import {Card} from '../models/card.models';
 
 
 export const mangasResolver: ResolveFn<Card[]> = () => {

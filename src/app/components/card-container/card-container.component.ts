@@ -15,7 +15,7 @@ import { Card } from "src/app/models/card.models";
 export class CardContainerComponent {
 
   @Input()
-  public cardDatas: Card[] | undefined;
+  public cardDatas: Card[];
 
   constructor() {
   }

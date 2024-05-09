@@ -10,6 +10,6 @@ import { Component, Input } from "@angular/core";
 export class GenreChipComponent {
 
   @Input()
-  public genre: string | undefined;
+  public genre: string;
 
 }

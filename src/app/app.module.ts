@@ -9,6 +9,10 @@ import { CardContainerComponent } from './components/card-container/card-contain
 import { MainPageComponent } from './pages/main-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenreChipComponent } from './components/genre-chip/genre-chip.component';
+import {NgOptimizedImage} from '@angular/common';
+import {SearchBarComponent} from './components/search-bar/search-bar.component';
+import { StoreModule } from '@ngrx/store';
+import {genresReducer} from './store/reducers/genres.reducer';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,17 @@ import { GenreChipComponent } from './components/genre-chip/genre-chip.component
     CardContainerComponent,
     MainPageComponent,
     HeaderComponent,
-    GenreChipComponent
+    GenreChipComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage,
+    StoreModule.forRoot({
+      genres: genresReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
