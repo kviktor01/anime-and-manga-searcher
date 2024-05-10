@@ -1,12 +1,14 @@
-import { Component, Input } from '@angular/core';
-import { Card } from 'src/app/models/card.models';
+import {Component, Input} from '@angular/core';
+import {Card} from 'src/app/models/card.models';
+import {Store} from '@ngrx/store';
+import {Genre} from '../../models/genre.model';
 
 @Component({
   selector: 'card',
   template: `
     <div class="card">
       <div class="card-front">
-        <img [ngSrc]="cardData.imageUrl" fill alt=""/>
+        <img [ngSrc]="cardData.imageUrl" fill priority alt=""/>
       </div>
       <div class="card-back">
         <h2>{{ cardData.title }}</h2>
@@ -21,12 +23,13 @@ import { Card } from 'src/app/models/card.models';
             </genre-chip>
           </div>
         </div>
-        <button>
+        <button
+          >
           Továbbiak
         </button>
       </div>
     </div>
-  `,
+  `
 })
 export class CardComponent {
   @Input()

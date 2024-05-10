@@ -33,7 +33,7 @@ export class MangaRequestsService {
   }
 
   public mangaGenresRequest(): Observable<Genre[]> {
-    return this.http.get<any>('').pipe(map(response => {
+    return this.http.get<any>('https://api.jikan.moe/v4/genres/manga').pipe(map(response => {
       return response.data.map((genre: any) => ({
         name: genre.name,
         id: genre['mal_id']
