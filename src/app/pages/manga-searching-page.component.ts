@@ -4,20 +4,20 @@ import {Card} from '../models/card.models';
 import {Store} from '@ngrx/store';
 import {setAnimeGenres, setMangaGenres} from '../store/actions/genres.actions';
 import {Genre} from '../models/genre.model';
-import {Observable} from 'rxjs';
-import {mangaGenresSelector} from '../store/selectors/genres.selectors';
 
 @Component({
   template: `
-    <div>
+    <div class="main-container">
+      <search-bar
+      [mode]="'MANGA'">
+      </search-bar>
       <card-container [cardDatas]="cards"></card-container>
     </div>
   `
 })
-export class MainPageComponent {
+export class MangaSearchingPageComponent {
 
   public cards: Card[];
-  public genres$: Observable<Genre[]>;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -26,6 +26,5 @@ export class MainPageComponent {
     this.cards = activatedRoute.snapshot.data['mangas'];
     this.store.dispatch(setMangaGenres({genres: activatedRoute.snapshot.data['mangaGenres']}));
     this.store.dispatch(setAnimeGenres({genres: activatedRoute.snapshot.data['mangaGenres']}));
-    this.store.select(mangaGenresSelector).subscribe(value => console.log(value));
   }
 }

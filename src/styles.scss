@@ -1,22 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
-*{
+* {
   box-sizing: border-box;
   margin: 0;
 }
 
 body {
- background-color: rgba(239,226,217,0.7)
+  background-color: rgba(239, 226, 217, 0.7)
 }
-.card-container{
+
+.main-container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2.5rem;
-  margin: auto;
-  max-width: 1400px;
-
 }
 
-.card{
+.card {
   transform-style: preserve-3d;
   height: 400px;
   transition: all 0.5s ease;
@@ -24,49 +27,50 @@ body {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.card-front{
+.card-front {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
-.card-back{
+
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   transform: rotateY(180deg);
-  background-color: rgba(230,205,185,0.5);
+  background-color: rgba(230, 205, 185, 0.5);
   color: rgb(130 109 94);
   border-radius: 15px;
   padding: 1rem;
   font-size: 1.2rem;
 }
 
-.card:hover{
+.card:hover {
   transform: rotateY(180deg);
 }
 
-.card-front img{
+.card-front img {
   height: 100%;
   width: 100%;
   border-radius: 15px;
 }
 
-.card-data{
+.card-data {
   margin-top: 1rem;
 }
 
-.card-data span{
+.card-data span {
   display: block;
   margin-top: 0.5rem;
 }
 
-.genres-container{
+.genres-container {
   margin-top: 0.8rem;
 }
 
-span.genre-chip{
+span.genre-chip {
   background-color: rgb(237, 188, 149);
   border-radius: 20px;
   padding: 0.5rem 1rem;
@@ -74,7 +78,7 @@ span.genre-chip{
   display: inline-block;
 }
 
-.card button{
+.card button {
   background-color: rgb(238, 198, 166);
   border: none;
   border-radius: 10px;
@@ -87,7 +91,42 @@ span.genre-chip{
   bottom: 20px;
 }
 
-.card button:hover{
+.card button:hover {
   cursor: pointer;
   background-color: rgb(237, 188, 149);
+}
+
+.autocomplete {
+  position: relative;
+}
+
+.autocomplete input{
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  width: 100%
+}
+
+.autocomplete-item-container {
+  max-height: 150px;
+  overflow: auto;
+  position: absolute;
+  top: 35px;
+  z-index:100;
+  background: aliceblue;
+  width: 100%
+}
+
+.autocomplete-item {
+  display: block;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+.autocomplete-item:hover{
+  cursor: pointer;
+  background: white;
+}
+
+.search-bar-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

@@ -1,7 +1,5 @@
 import {Component, Input} from '@angular/core';
 import {Card} from 'src/app/models/card.models';
-import {Store} from '@ngrx/store';
-import {Genre} from '../../models/genre.model';
 
 @Component({
   selector: 'card',

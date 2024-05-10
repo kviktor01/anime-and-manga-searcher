@@ -6,23 +6,25 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardContainerComponent } from './components/card-container/card-container.component';
-import { MainPageComponent } from './pages/main-page.component';
+import { MangaSearchingPageComponent } from './pages/manga-searching-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GenreChipComponent } from './components/genre-chip/genre-chip.component';
 import {NgOptimizedImage} from '@angular/common';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import { StoreModule } from '@ngrx/store';
 import {genresReducer} from './store/reducers/genres.reducer';
+import {AutoCompleteComponent} from './components/auto-complete/auto-complete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     CardContainerComponent,
-    MainPageComponent,
+    MangaSearchingPageComponent,
     HeaderComponent,
     GenreChipComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    AutoCompleteComponent
   ],
   imports: [
     BrowserModule,

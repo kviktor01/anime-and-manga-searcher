@@ -13,7 +13,11 @@ export class MangaRequestsService {
   }
 
   public mangasRequest(): Observable<Card[]> {
-    return this.http.get<any>('https://api.jikan.moe/v4/manga').pipe(map(response => {
+    return this.http.get<any>('https://api.jikan.moe/v4/manga', {
+      params: {
+        limit: 24
+      }
+    }).pipe(map(response => {
         return response.data.map(
           (item: any) =>
             ({
