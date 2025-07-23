@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "anime-and-manga-searcher:build:production"
+              "buildTarget": "anime-and-manga-searcher:build:production"
             },
             "development": {
-              "browserTarget": "anime-and-manga-searcher:build:development"
+              "buildTarget": "anime-and-manga-searcher:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "anime-and-manga-searcher:build"
+            "buildTarget": "anime-and-manga-searcher:build"
           }
         },
         "test": {
