@@ -2,18 +2,22 @@ import {Component, Input} from '@angular/core';
 import {AnimeOrMangaType, Genre} from '../../models/genre.model';
 
 @Component({
-  selector: 'auto-complete',
-  template: `
+    selector: 'auto-complete',
+    template: `
     <div class="autocomplete">
       <input
         (focusin)="openAutoComplete()"
         (focusout)="closeAutoComplete()"
       />
-      <div *ngIf="open" class="autocomplete-item-container">
-        <span class="autocomplete-item" *ngFor="let item of autocompleteValues">
+      @if (open) {
+        <div class="autocomplete-item-container">
+          @for (item of autocompleteValues; let index = $index; track index){
+            <span class="autocomplete-item">
           {{ item.name }}
         </span>
-      </div>
+          }
+        </div>
+      }
     </div>
   `
 })

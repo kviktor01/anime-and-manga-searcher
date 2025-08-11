@@ -1,16 +1,21 @@
 import { Component, Input } from "@angular/core";
 import { Card } from "src/app/models/card.models";
+import {CardComponent} from '../card/card.component';
 
 @Component({
   selector: 'card-container',
+  imports: [
+    CardComponent
+  ],
   template: `
     <div class="card-container">
-      <card
-        *ngFor="let item of cardDatas"
-        [cardData]="item">
-      </card>
+      @for (item of cardDatas; track item.id){
+        <card
+          [cardData]="item">
+        </card>
+      }
     </div>
-  `,
+  `
 })
 export class CardContainerComponent {
 

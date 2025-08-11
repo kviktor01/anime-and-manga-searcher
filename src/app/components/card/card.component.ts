@@ -1,12 +1,14 @@
 import {Component, Input} from '@angular/core';
 import {Card} from 'src/app/models/card.models';
+import {GenreChipComponent} from '../genre-chip/genre-chip.component';
 
 @Component({
   selector: 'card',
+  imports: [GenreChipComponent],
   template: `
     <div class="card">
       <div class="card-front">
-        <img [ngSrc]="cardData.imageUrl" fill priority alt=""/>
+        <img [src]="cardData.imageUrl" alt=""/>
       </div>
       <div class="card-back">
         <h2>{{ cardData.title }}</h2>
@@ -15,14 +17,14 @@ import {Card} from 'src/app/models/card.models';
           <span>Releasing: {{ cardData.releaseStart }} - {{ cardData.releaseEnd }}</span>
           <span>Score: {{ cardData.score }}</span>
           <div class="genres-container">
-            <genre-chip
-              *ngFor="let genre of cardData.genres"
-              [genre]="genre">
-            </genre-chip>
+            @for (genre of cardData.genres; track genre) {
+              <genre-chip
+                [genre]="genre">
+              </genre-chip>
+            }
           </div>
         </div>
-        <button
-          >
+        <button>
           Továbbiak
         </button>
       </div>

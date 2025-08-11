@@ -3,6 +3,8 @@ import {Observable} from 'rxjs';
 import {AnimeOrMangaType, Genre} from '../../models/genre.model';
 import {Store} from '@ngrx/store';
 import {animeGenresSelector, mangaGenresSelector} from '../../store/selectors/genres.selectors';
+import {AsyncPipe} from '@angular/common';
+import {AutoCompleteComponent} from '../auto-complete/auto-complete.component';
 
 @Component({
   selector: 'search-bar',
@@ -12,10 +14,13 @@ import {animeGenresSelector, mangaGenresSelector} from '../../store/selectors/ge
         <auto-complete
           [autocompleteValues]="(genres$ | async)!"
         ></auto-complete>
-        
       </form>
     </div>
-  `
+  `,
+  imports: [
+    AsyncPipe,
+    AutoCompleteComponent
+  ]
 })
 export class SearchBarComponent implements OnInit {
 
